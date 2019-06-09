@@ -21,6 +21,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAward -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAward">
@@ -35,7 +45,17 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasComment">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasLanguage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages"/>
     </owl:ObjectProperty>
     
 
@@ -44,7 +64,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasMessage">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
     </owl:ObjectProperty>
     
 
@@ -52,6 +73,7 @@
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasModerator -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasModerator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
     </owl:ObjectProperty>
@@ -77,12 +99,31 @@
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasReceiver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasReceiver">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSaved -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSaved">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSavedBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSender -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
     </owl:ObjectProperty>
     
 
@@ -115,11 +156,48 @@
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isAwardedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isAwardedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isCommentedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isCommentedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSavedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSavedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSubscribedTo -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSubscribedTo">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isVotedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isVotedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
     </owl:ObjectProperty>
     
 
@@ -135,12 +213,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor -->
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCoins -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCoins">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
@@ -149,15 +225,9 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasContent">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCreator -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCreator">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Text"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -168,8 +238,22 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rules"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rules"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Trophies"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -178,19 +262,6 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasEmail">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasId -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasId">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -218,6 +289,8 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasName">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -227,6 +300,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasProfileImage">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
     </owl:DatatypeProperty>
     
@@ -244,7 +318,9 @@
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasTitle -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Trophies"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -348,6 +424,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rules -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rules"/>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Silver -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Silver">
@@ -367,6 +455,12 @@
     <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Text">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Trophies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Trophies"/>
     
 
 
