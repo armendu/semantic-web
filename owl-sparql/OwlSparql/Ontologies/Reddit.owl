@@ -214,9 +214,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasPassword -->
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasPassword">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasName">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -228,6 +228,15 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasProfileImage">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSurname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSurname">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -380,10 +389,27 @@
     
 
 
-    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#TestProfile -->
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#TestProfile">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati">
         <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <hasDateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-06-06T23:17</hasDateCreated>
+        <hasEmail>hekuran.kastrati1@gmail.com</hasEmail>
+        <hasName>Hekuran</hasName>
+        <hasSurname>Kastrati</hasSurname>
+        <hasUsername>hekurankastrati</hasUsername>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <hasName>Rina</hasName>
+        <hasProfileImage>rina.shehu@studentet.uni-pr.edu</hasProfileImage>
+        <hasSurname>Shehu</hasSurname>
+        <hasUsername>rinashehu</hasUsername>
     </owl:NamedIndividual>
 </rdf:RDF>
 
