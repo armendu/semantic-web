@@ -1,0 +1,419 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#"
+     xml:base="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAward -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAward">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasComment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasComment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasMessage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasMessage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasModerator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasModerator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasOnlineMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasOnlineMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasPost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasPost">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSaved -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSaved">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSubscriber -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSubscriber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVoted -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVoted">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVotesFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVotesFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSubscribedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isSubscribedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasAuthor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasContent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCreator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasCreator">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasDateCreated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasDateCreated">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasEmail">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasId">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasKarma -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasKarma">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasLanguage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasLanguage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasProfileImage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasProfileImage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSurname -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasSurname">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasTitle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasUsername -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasUsername">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVotes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasVotes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Audio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Audio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Gold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Gold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Languages"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Photo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Photo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Platinium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Platinium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Silver -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Silver">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Awards"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Text -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Text">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <hasDateCreated rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-06-06T23:17</hasDateCreated>
+        <hasEmail>hekuran.kastrati1@gmail.com</hasEmail>
+        <hasName>Hekuran</hasName>
+        <hasSurname>Kastrati</hasSurname>
+        <hasUsername>hekurankastrati</hasUsername>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <hasName>Rina</hasName>
+        <hasProfileImage>rina.shehu@studentet.uni-pr.edu</hasProfileImage>
+        <hasSurname>Shehu</hasSurname>
+        <hasUsername>rinashehu</hasUsername>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

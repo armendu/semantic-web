@@ -1,6 +1,5 @@
 package hello;
 
-import org.semanticweb.owlapi.formats.PrefixDocumentFormat;
 import org.semanticweb.owlapi.model.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -33,7 +32,7 @@ public class Application {
                 // Create an OWL ontology using the OWLAPI
                 OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
-                File file = new File("C:\\Users\\Armend Ukëhaxhaj\\Documents\\Workspace\\Personal\\semantic-web\\owl-sparql\\RdfDesktop\\Ontologies\\pizza.owl");
+                File file = new File("C:\\Users\\Armend Ukëhaxhaj\\Documents\\Workspace\\Personal\\semantic-web\\owl-swrl\\main\\src\\main\\ontologies\\pizza.owl");
 
                 OWLOntology ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 

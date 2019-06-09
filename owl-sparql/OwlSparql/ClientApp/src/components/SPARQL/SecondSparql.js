@@ -3,15 +3,16 @@ import React, { Component } from 'react';
 export default class SecondSparql extends Component {
   static displayName = SecondSparql.name;
 
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = { results: [], loading: true };
 
-    fetch('api/SampleData/FirstSparql')
+    fetch('http://localhost:8080/first-swrl')
       .then(response => response.json())
       .then(data => {
         this.setState({ results: data, loading: false });
-      });
+      })
+      .catch(error => this.setState({ results: ['The following error occurred: ' + error], loading: false }));
   }
 
   static renderResultsTable(results) {
@@ -23,24 +24,24 @@ export default class SecondSparql extends Component {
         <p>This is a simple example of getting data from the API.</p>
 
         <table className='table table-striped'>
-        <thead>
-          <tr>
-            <th>Name of data:</th>
-          </tr>
-        </thead>
-        <tbody>
-          {results.map(result =>
-            <tr key={result.toString()}>
-              <td>{result}</td>
+          <thead>
+            <tr>
+              <th>Name of data:</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {results.map(result =>
+              <tr key={result.toString()}>
+                <td>{result}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     );
   }
 
-  render () {
+  render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
       : SecondSparql.renderResultsTable(this.state.results);
