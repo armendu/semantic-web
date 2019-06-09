@@ -33,6 +33,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasAuthor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasAuthor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Tip"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
     </owl:ObjectProperty>
@@ -42,6 +43,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasCheckedIn -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasCheckedIn">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isCheckedInBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
     </owl:ObjectProperty>
@@ -51,6 +53,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasInfo -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasInfo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Info"/>
     </owl:ObjectProperty>
@@ -60,6 +63,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasLeftTips -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasLeftTips">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasTips"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Tip"/>
     </owl:ObjectProperty>
@@ -69,6 +73,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasLikedPlace -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasLikedPlace">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isLikedBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
     </owl:ObjectProperty>
@@ -136,6 +141,24 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasVisited">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isCheckedInBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isCheckedInBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isLikedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isLikedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
     </owl:ObjectProperty>
     
 
@@ -326,6 +349,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasUsername -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasUsername">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Snapchat"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
