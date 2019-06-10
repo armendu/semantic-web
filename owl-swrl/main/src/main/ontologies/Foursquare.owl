@@ -588,6 +588,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat">
         <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Dinner"/>
+        <hasInfo rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Info"/>
         <isRatedBy rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Rate"/>
         <hasName>Pishat</hasName>
     </owl:NamedIndividual>
@@ -597,7 +598,6 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address">
-        <hasAddress rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address"/>
         <hasCity>Prishtine</hasCity>
         <hasNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasNumber>
         <hasState>Kosovo</hasState>
@@ -610,6 +610,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Info -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Info">
+        <hasAddress rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address"/>
         <hasCategory>Lunch Restaurant</hasCategory>
         <hasEndingHour>20:00</hasEndingHour>
         <hasPhone>+383 49 201 203</hasPhone>
