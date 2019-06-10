@@ -32,7 +32,7 @@ public class Application {
                 // Create an OWL ontology using the OWLAPI
                 OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
-                File file = new File("C:\\Users\\Armend Ukëhaxhaj\\Documents\\Workspace\\Personal\\semantic-web\\owl-swrl\\main\\src\\main\\ontologies\\pizza.owl");
+                File file = new File("src/main/ontologies/pizza.owl");
 
                 OWLOntology ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 

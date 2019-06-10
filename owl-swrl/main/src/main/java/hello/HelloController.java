@@ -15,7 +15,6 @@ public class HelloController {
         return "Greetings from Spring Boot!";
     }
 
-    @CrossOrigin(origins = "http://localhost:5000")
     @RequestMapping("/first-swrl")
     public List<String> firstSwrl(){
 
