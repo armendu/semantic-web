@@ -94,7 +94,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasRated">
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isRatedBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Rate"/>
     </owl:ObjectProperty>
     
 
@@ -102,6 +102,7 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasSavedPlaces -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#hasSavedPlaces">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isSavedBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
     </owl:ObjectProperty>
@@ -167,8 +168,14 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isRatedBy">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Place"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Rate"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isSavedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#isSavedBy"/>
     
 
 
@@ -525,6 +532,165 @@
     <owl:Class rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Twitter">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#SocialMedia"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Armend_Ukehaxhaj -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Armend_Ukehaxhaj">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
+        <hasSavedPlaces rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat"/>
+        <hasName>Armend</hasName>
+        <hasProfileImg>armend.jpg</hasProfileImg>
+        <hasSurname>Ukehaxhaj</hasSurname>
+        <hasUsername>armendukehaxhaj</hasUsername>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Kastrati -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Kastrati">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
+        <hasCheckedIn rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat"/>
+        <hasLeftTips rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Tip_Route"/>
+        <hasLikedPlace rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat"/>
+        <hasSearched rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66"/>
+        <hasName>Hekuran</hasName>
+        <hasProfileImg>hekuran.jpg</hasProfileImg>
+        <hasSurname>Kastrati</hasSurname>
+        <hasUsername>hekurankastrati</hasUsername>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Tip_Route -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Tip_Route">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Tip"/>
+        <hasTipMessage>Make wifi public</hasTipMessage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Dinner"/>
+        <isRatedBy rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Rate"/>
+        <hasName>Pishat</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address">
+        <hasAddress rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Address"/>
+        <hasCity>Prishtine</hasCity>
+        <hasNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hasNumber>
+        <hasState>Kosovo</hasState>
+        <hasStreet>Qamil Hoxha</hasStreet>
+        <hasZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</hasZipCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Info -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Info">
+        <hasCategory>Lunch Restaurant</hasCategory>
+        <hasEndingHour>20:00</hasEndingHour>
+        <hasPhone>+383 49 201 203</hasPhone>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">15.0</hasPrice>
+        <hasStartingHour rdf:datatype="http://www.w3.org/2001/XMLSchema#string">09:00</hasStartingHour>
+        <hasWebsite rdf:datatype="http://www.w3.org/2001/XMLSchema#string">www.pishat-ks.com</hasWebsite>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Rate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Rate">
+        <hasLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</hasLevel>
+        <hasRateDescription>Delicious food</hasRateDescription>
+        <isRightInMap rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isRightInMap>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Rina_Shehu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Rina_Shehu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Profile"/>
+        <hasCheckedIn rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66"/>
+        <hasRated rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Pishat_Rate"/>
+        <hasVisited rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66"/>
+        <hasName>Rina</hasName>
+        <hasProfileImg>rina.jpg</hasProfileImg>
+        <hasSurname>Shehu</hasSurname>
+        <hasUsername>rinashehu</hasUsername>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#CoffeAndTea"/>
+        <hasInfo rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Info"/>
+        <hasSocialMedia rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Fb"/>
+        <hasTips rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Hekuran_Tip_Route"/>
+        <hasName>Route 66</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66_Address -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66_Address">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Address"/>
+        <hasCity>Prishtine</hasCity>
+        <hasNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</hasNumber>
+        <hasState>Kosovo</hasState>
+        <hasStreet>Agim Ramadani</hasStreet>
+        <hasZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</hasZipCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Fb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Fb">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Facebook"/>
+        <hasUrl>www.facebook.com/route66-ks</hasUrl>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Info -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_Info">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Info"/>
+        <hasAddress rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#Route_66_Address"/>
+        <hasCategory>Restaurant</hasCategory>
+        <hasEndingHour>03:00</hasEndingHour>
+        <hasPhone>+383 44 176 325</hasPhone>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</hasPrice>
+        <hasStartingHour>07:00</hasStartingHour>
+        <hasWebsite>www.route66-ks.com</hasWebsite>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
