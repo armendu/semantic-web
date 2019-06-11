@@ -13,16 +13,18 @@ namespace OwlSparql.Controllers
     public class RedditDataController : Controller
     {
         private readonly IGraph _redditGraph;
-        
+
         private readonly SparqlQueryParser _parser;
 
         public RedditDataController()
         {
-            _redditGraph = new Graph();   
-            FileLoader.Load(_redditGraph, @"Ontologies/Reddit.owl");
+            _redditGraph = new Graph();
+
+            DataUriLoader.Load(_redditGraph, new Uri("https://www.tratics.com/semanticweb/Reddit.owl"));
+//            FileLoader.Load(_redditGraph, @"Ontologies/Reddit.owl");
 
             //First we need an instance of the SparqlQueryParser
-            _parser = new SparqlQueryParser(); 
+            _parser = new SparqlQueryParser();
         }
 
         [HttpGet("[action]/numberOfPosts={numberOfPosts}")]
@@ -59,9 +61,15 @@ namespace OwlSparql.Controllers
             {
                 foreach (SparqlResult result in resultSet.Results)
                 {
-                    string post = result.TryGetValue( "post", out var node) ? ((IUriNode)node).Uri.Fragment.Replace('#', ' ') : string.Empty;
-                    string title = result.TryGetValue( "title", out var titleNode) ? ((ILiteralNode)titleNode).Value : string.Empty;
-                    string date = result.TryGetValue( "date", out var dateNode) ? ((ILiteralNode)dateNode).Value : string.Empty;
+                    string post = result.TryGetValue("post", out var node)
+                        ? ((IUriNode) node).Uri.Fragment.Replace('#', ' ')
+                        : string.Empty;
+                    string title = result.TryGetValue("title", out var titleNode)
+                        ? ((ILiteralNode) titleNode).Value
+                        : string.Empty;
+                    string date = result.TryGetValue("date", out var dateNode)
+                        ? ((ILiteralNode) dateNode).Value
+                        : string.Empty;
 
                     dto.Data.Add(new RecentPostsData
                     {
@@ -92,7 +100,7 @@ namespace OwlSparql.Controllers
               ?post reddit:hasVotes ?votes .
             }
             ORDER BY DESC(?votes)
-            LIMIT "+ numberOfResults);
+            LIMIT " + numberOfResults);
 
             InMemoryDataset ds = new InMemoryDataset(_redditGraph);
 
@@ -110,10 +118,18 @@ namespace OwlSparql.Controllers
             {
                 foreach (SparqlResult result in resultSet.Results)
                 {
-                    string post = result.TryGetValue( "post", out var node) ? ((IUriNode)node).Uri.Fragment.Replace('#', ' ') : string.Empty;
-                    string title = result.TryGetValue( "title", out var titleNode) ? ((ILiteralNode)titleNode).Value : string.Empty;
-                    string date = result.TryGetValue( "date", out var dateNode) ? ((ILiteralNode)dateNode).Value : string.Empty;
-                    string votes = result.TryGetValue( "votes", out var votesNode) ? ((ILiteralNode)votesNode).Value : string.Empty;
+                    string post = result.TryGetValue("post", out var node)
+                        ? ((IUriNode) node).Uri.Fragment.Replace('#', ' ')
+                        : string.Empty;
+                    string title = result.TryGetValue("title", out var titleNode)
+                        ? ((ILiteralNode) titleNode).Value
+                        : string.Empty;
+                    string date = result.TryGetValue("date", out var dateNode)
+                        ? ((ILiteralNode) dateNode).Value
+                        : string.Empty;
+                    string votes = result.TryGetValue("votes", out var votesNode)
+                        ? ((ILiteralNode) votesNode).Value
+                        : string.Empty;
 
                     dto.Data.Add(new TopPostsData
                     {

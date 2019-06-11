@@ -6,17 +6,18 @@ import './NavMenu.css';
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       collapsed: true,
-      dropdownOpen: false 
+      dropdownOpen: false,
+      swrlDropdownOpen: false
     };
   }
 
-  toggleNavbar = ()=> {
+  toggleNavbar = () => {
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -28,7 +29,13 @@ export class NavMenu extends Component {
     }));
   }
 
-  render () {
+  toggleSwrl = () => {
+    this.setState(prevState => ({
+      swrlDropdownOpen: !prevState.swrlDropdownOpen
+    }));
+  }
+
+  render() {
     return (
       <header>
         <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
@@ -54,10 +61,22 @@ export class NavMenu extends Component {
                   </DropdownMenu>
                 </Dropdown>
                 <NavItem>
-                  
+
                 </NavItem>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/fetch-data">SWRL APIs</NavLink>
+                  <Dropdown isOpen={this.state.swrlDropdownOpen} toggle={this.toggleSwrl}>
+                    <DropdownToggle caret>SPARQL</DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem header>Foursquare queries</DropdownItem>
+                      <DropdownItem><NavLink tag={Link} className="text-dark" to="/first-swrl">First SWRL</NavLink></DropdownItem>
+                      <DropdownItem><NavLink tag={Link} className="text-dark" to="/second-swrl">SWRL</NavLink></DropdownItem>
+                      <DropdownItem><NavLink tag={Link} className="text-dark" to="/third-swrl">SWRL</NavLink></DropdownItem>
+                      <DropdownItem divider></DropdownItem>
+                      <DropdownItem header>Reddit queries</DropdownItem>
+                      <DropdownItem><NavLink tag={Link} className="text-dark" to="/fourth-swrl">SWRL</NavLink></DropdownItem>
+                      <DropdownItem><NavLink tag={Link} className="text-dark" to="/fifth-swrl">SWRL</NavLink></DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
                 </NavItem>
               </ul>
             </Collapse>

@@ -29,7 +29,7 @@ public class RedditDataController {
         OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
         try {
-            File file = new File("src/main/ontologies/Reddit.owl");
+            File file = new File("src\\main\\ontologies\\Reddit.owl");
 
             ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 

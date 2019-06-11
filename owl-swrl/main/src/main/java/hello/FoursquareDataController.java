@@ -1,5 +1,7 @@
 package hello;
 
+import hello.models.ProfileHasCheckedIn;
+import hello.models.ProfileHasCheckedInData;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLDocumentFormat;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -13,6 +15,8 @@ import org.swrlapi.parser.SWRLParseException;
 import org.swrlapi.sqwrl.SQWRLQueryEngine;
 import org.swrlapi.sqwrl.SQWRLResult;
 import org.swrlapi.sqwrl.exceptions.SQWRLException;
+import org.swrlapi.sqwrl.values.SQWRLClassResultValue;
+import org.swrlapi.sqwrl.values.SQWRLResultValue;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -29,7 +33,7 @@ public class FoursquareDataController {
         OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
         try {
-            File file = new File("src/main/ontologies/Foursquare.owl");
+            File file = new File("src\\main\\ontologies\\Foursquare.owl");
 
             ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
@@ -81,5 +85,43 @@ public class FoursquareDataController {
         }
 
         return names;
+    }
+
+    @RequestMapping("/foursquaredata/second-swrl")
+    public ProfileHasCheckedIn secondSwrl() {
+
+        ProfileHasCheckedIn profileHasCheckedIn = new ProfileHasCheckedIn();
+
+        try {
+            // Create SQWRL query engine using the SWRLAPI
+            SQWRLQueryEngine queryEngine = SWRLAPIFactory.createSQWRLQueryEngine(ontology);
+
+            // Create and execute a SQWRL query using the SWRLAPI
+            SQWRLResult result = queryEngine.runSQWRLQuery("q1", "Profile(?p) ^ hasCheckedIn(?p, ?s) ^ Place(?s) -> sqwrl:select(?p, ?s)");
+
+            // Process the SQWRL result
+            while (result.next()){
+
+                ProfileHasCheckedInData dataToBeAdded = new ProfileHasCheckedInData();
+
+
+
+                System.out.println("Salary: " + result.getLiteral("s"));
+
+                profileHasCheckedIn.data.add(dataToBeAdded);
+            }
+
+        } catch (SWRLParseException e) {
+            System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (SQWRLException e) {
+            System.err.println("Error running SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (RuntimeException e) {
+            System.err.println("Error occurred: " + e.getMessage());
+            System.exit(-1);
+        }
+
+        return profileHasCheckedIn;
     }
 }
