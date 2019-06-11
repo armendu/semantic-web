@@ -792,7 +792,7 @@ Change my mind!</hasDescription>
         <hasSubscriber rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
         <hasDateCreated>2019-06-12</hasDateCreated>
         <hasDescription>This Subbredit has been created about Qualification Group Of Kosova</hasDescription>
-        <hasName>Kosova EU Qualification</hasName>
+        <hasName>Kosova</hasName>
         <hasProfileImage>kosovaEuro.jpg</hasProfileImage>
     </owl:NamedIndividual>
     
