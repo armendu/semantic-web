@@ -19,17 +19,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class FoursquareDataController {
+public class RedditDataController {
 
     OWLOntology ontology;
 
-    public FoursquareDataController() {
+    public RedditDataController() {
 
         // Create an OWL ontology using the OWLAPI
         OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
         try {
-            File file = new File("src\\main\\ontologies\\Foursquare.owl");
+            File file = new File("src\\main\\ontologies\\Reddit.owl");
 
             ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
@@ -52,7 +52,12 @@ public class FoursquareDataController {
         }
     }
 
-    @RequestMapping("/foursquaredata/first-swrl")
+    @RequestMapping("/redditdata/")
+    public String index() {
+        return "Greetings from Spring Boot!";
+    }
+
+    @RequestMapping("/redditdata/first-swrl")
     public List<String> firstSwrl() {
 
         List<String> names = new ArrayList<String>();
@@ -62,7 +67,7 @@ public class FoursquareDataController {
             SQWRLQueryEngine queryEngine = SWRLAPIFactory.createSQWRLQueryEngine(ontology);
 
             // Create and execute a SQWRL query using the SWRLAPI
-            SQWRLResult result = queryEngine.runSQWRLQuery("q1", "Profile(?x) ^ hasRated(?x, ?y) ^ isRightInMap(?y, true) -> sqwrl:select(?x)");
+            SQWRLResult result = queryEngine.runSQWRLQuery("q1", "");
 
             System.out.println("x: " + result.getLiteral("x"));
 
