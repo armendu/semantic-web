@@ -49,7 +49,7 @@ export class NavMenu extends Component {
                     <DropdownItem><NavLink tag={Link} className="text-dark" to="/third-sparql">Get All Likes For Dinner Place</NavLink></DropdownItem>
                     <DropdownItem divider></DropdownItem>
                     <DropdownItem header>Reddit queries</DropdownItem>
-                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/fourth-sparql">Get Top Ten Recent Posts</NavLink></DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/fourth-sparql">Get Most Recent Posts</NavLink></DropdownItem>
                     <DropdownItem><NavLink tag={Link} className="text-dark" to="/fifth-sparql">Get Top Voted Posts</NavLink></DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
