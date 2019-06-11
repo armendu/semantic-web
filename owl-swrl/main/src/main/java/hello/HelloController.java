@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 public class HelloController {
-    
+
     @RequestMapping("/")
     public String index() {
         return "Greetings from Spring Boot!";
@@ -24,4 +24,6 @@ public class HelloController {
 
         return someList;
     }
+
+
 }

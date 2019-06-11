@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 
@@ -11,14 +11,21 @@ export class NavMenu extends Component {
 
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
-      collapsed: true
+      collapsed: true,
+      dropdownOpen: false 
     };
   }
 
-  toggleNavbar () {
+  toggleNavbar = ()=> {
     this.setState({
       collapsed: !this.state.collapsed
     });
+  }
+
+  toggle = () => {
+    this.setState(prevState => ({
+      dropdownOpen: !prevState.dropdownOpen
+    }));
   }
 
   render () {
@@ -33,8 +40,21 @@ export class NavMenu extends Component {
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
                 </NavItem>
+                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                  <DropdownToggle caret>SPARQL</DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem header>Foursquare queries</DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/first-sparql">GetPlaces That Serve Breakfast And Tea</NavLink></DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/second-sparql">Get Places With Social Media</NavLink></DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/third-sparql">Get All Likes For Dinner Place</NavLink></DropdownItem>
+                    <DropdownItem divider></DropdownItem>
+                    <DropdownItem header>Reddit queries</DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/fourth-sparql">Get Top Ten Recent Posts</NavLink></DropdownItem>
+                    <DropdownItem><NavLink tag={Link} className="text-dark" to="/fifth-sparql">Third SPARQL</NavLink></DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/sparql">SPARQL APIs</NavLink>
+                  
                 </NavItem>
                 <NavItem>
                   <NavLink tag={Link} className="text-dark" to="/fetch-data">SWRL APIs</NavLink>

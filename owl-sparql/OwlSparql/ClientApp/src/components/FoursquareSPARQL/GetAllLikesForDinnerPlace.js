@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
 
-export default class SecondSparql extends Component {
-  static displayName = SecondSparql.name;
+export default class GetAllLikesForDinnerPlace extends Component {
+  static displayName = GetAllLikesForDinnerPlace.name;
 
   constructor(props) {
     super(props);
     this.state = { results: [], loading: true };
 
-    fetch('http://localhost:8080/first-swrl')
+    this.getData();
+  }
+
+  getData = () => {
+    fetch('api/FoursquareData/GetAllLikesForDinnerPlace')
       .then(response => response.json())
       .then(data => {
         this.setState({ results: data, loading: false });
-      })
-      .catch(error => this.setState({ results: ['The following error occurred: ' + error], loading: false }));
+      });
   }
 
-  static renderResultsTable(results) {
+  renderResultsTable = (results) => {
     console.log(results);
     return (
       <div>
-        <h1>Data</h1>
-
-        <p>This is a simple example of getting data from the API.</p>
-
+        <h1>Get all likes of places that serve Dinner</h1>
+        
         <table className='table table-striped'>
           <thead>
             <tr>
-              <th>Name of data:</th>
+                <th>Address</th>
+                <th>Places</th>
             </tr>
           </thead>
           <tbody>
-            {results.map(result =>
-              <tr key={result.toString()}>
-                <td>{result}</td>
+            {results.data.map(info =>
+              <tr key={info.place.toString()}>
+                <td>
+                  {info.place}
+                </td>
+                <td>
+                  {info.likes}
+                </td>
               </tr>
             )}
           </tbody>
@@ -44,7 +51,7 @@ export default class SecondSparql extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : SecondSparql.renderResultsTable(this.state.results);
+      : this.renderResultsTable(this.state.results);
 
     return (
       <div>

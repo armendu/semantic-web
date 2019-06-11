@@ -26,6 +26,7 @@ public class Application {
     public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
         return args -> {
 
+<<<<<<< Updated upstream
             System.out.println("Let's inspect the beans provided by Spring Boot:");
 
             try {
@@ -69,6 +70,8 @@ public class Application {
                 System.err.println("Error starting application: " + e.getMessage());
                 System.exit(-1);
             }
+=======
+>>>>>>> Stashed changes
         };
     }
 
