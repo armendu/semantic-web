@@ -85,6 +85,7 @@
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasOnlineMember -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#hasOnlineMember">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#SubReddit"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
     </owl:ObjectProperty>
@@ -346,6 +347,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isOnline -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#isOnline">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -567,6 +577,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Profile"/>
         <hasAward rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Award3"/>
         <hasLanguage rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Esp"/>
+        <hasVoted rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Comment1"/>
         <hasCoins rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasCoins>
         <hasDateCreated>2019-06-06</hasDateCreated>
         <hasEmail>hekuran.kastrati1@gmail.com</hasEmail>
@@ -613,6 +624,52 @@ See you</hasContent>
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <hasSender rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
+        <hasContent>Hi Guys
+What&apos;s Up</hasContent>
+        <hasDateCreated>2019-06-07</hasDateCreated>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <hasSender rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
+        <hasContent>Hello All</hasContent>
+        <hasDateCreated>2019-06-07</hasDateCreated>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <hasSender rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
+        <hasContent>Can we start discussing about project?</hasContent>
+        <hasDateCreated>2019-06-07</hasDateCreated>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Messages"/>
+        <hasSender rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu"/>
+        <hasContent>Hey I am here
+Lets start working</hasContent>
+        <hasDateCreated>2019-06-07</hasDateCreated>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post1">
@@ -651,6 +708,25 @@ Dardanians</hasContent>
     
 
 
+    <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Room"/>
+        <hasMessage rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message3"/>
+        <hasMessage rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message4"/>
+        <hasMessage rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message5"/>
+        <hasMessage rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Message6"/>
+        <hasModerator rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu"/>
+        <hasOnlineMember rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
+        <hasOnlineMember rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
+        <hasDateCreated>2019-06-02</hasDateCreated>
+        <hasDescription>This room is created to talk about Web Semantic Project</hasDescription>
+        <hasName>Web Semantic Project</hasName>
+        <hasProfileImage>room1.jpg</hasProfileImage>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Sq -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Sq">
@@ -667,6 +743,8 @@ Dardanians</hasContent>
         <hasModerator rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
         <hasOnlineMember rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
         <hasOnlineMember rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Rina_Shehu"/>
+        <hasPost rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Post1"/>
+        <hasSubscriber rdf:resource="http://www.semanticweb.org/armendukëhaxhaj/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
         <hasDateCreated>2019-06-12</hasDateCreated>
         <hasDescription>This Subbredit has been created about Qualification Group Of Kosova</hasDescription>
         <hasName>Kosova EU Qualification</hasName>

@@ -6,7 +6,7 @@ import GetPlacesThatServeBreakfastAndTea from './components/FoursquareSPARQL/Get
 import GetPlacesWithSocialMedia from './components/FoursquareSPARQL/GetPlacesWithSocialMedia';
 import GetAllLikesForDinnerPlace from './components/FoursquareSPARQL/GetAllLikesForDinnerPlace';
 import GetTopTenRecentPosts from './components/RedditSPARQL/GetTopTenRecentPosts';
-import Parametered from './components/RedditSPARQL/Parametered';
+import GetTopVotedPosts from './components/RedditSPARQL/GetTopVotedPosts';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -19,7 +19,7 @@ export default class App extends Component {
         <Route path='/second-sparql' component={GetPlacesWithSocialMedia} />
         <Route path='/third-sparql' component={GetAllLikesForDinnerPlace} />
         <Route path='/fourth-sparql' component={GetTopTenRecentPosts} />
-        <Route path='/fifth-sparql' component={Parametered} />
+        <Route path='/fifth-sparql' component={GetTopVotedPosts} />
       </Layout>
     );
   }

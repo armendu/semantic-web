@@ -62,7 +62,7 @@ public class FoursquareDataController {
             SQWRLQueryEngine queryEngine = SWRLAPIFactory.createSQWRLQueryEngine(ontology);
 
             // Create and execute a SQWRL query using the SWRLAPI
-            SQWRLResult result = queryEngine.runSQWRLQuery("q1", "Profile(?x) ^ hasRated(?x, ?y) ^ isRightInMap(?y, true) -> sqwrl:select(?x)");
+            SQWRLResult result = queryEngine.runSQWRLQuery("q1", "Place(?x) ^ isRatedBy(?x, ?y) ^ isRightInMap(?y, true) -> sqwrl:select(?x)");
 
             System.out.println("x: " + result.getLiteral("x"));
 

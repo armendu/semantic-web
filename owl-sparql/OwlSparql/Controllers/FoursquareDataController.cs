@@ -127,8 +127,8 @@ namespace OwlSparql.Controllers
             return places;
         }
 
-        [HttpGet("[action]")]
-        public PlacesAndLikes GetAllLikesForDinnerPlace()
+        [HttpGet("[action]/place={inputPlace}")]
+        public PlacesAndLikes GetAllLikesForDinnerPlace(string inputPlace)
         {
             //Then we can parse a SPARQL string into a query
             SparqlQuery query = _parser.ParseFromString(@"
@@ -137,11 +137,11 @@ namespace OwlSparql.Controllers
             PREFIX foursquare: <http://www.semanticweb.org/hekurankastrati/ontologies/2019/5/foursquare#>
             SELECT ?place (COUNT(?profile) as ?likes)
             WHERE {
-              ?place rdf:type foursquare:Dinner .
-              ?profile rdf:type foursquare:profile .
-              ?profile foursquare:hasLikedPlace ?place
+            ?place rdf:type foursquare:" + inputPlace + @" .
+            ?profile rdf:type foursquare:Profile .
+            ?profile foursquare:hasLikedPlace ?place .
             }
-            GROUP BY (?place)");
+            GROUP BY ?place");
 
             InMemoryDataset ds = new InMemoryDataset(_foursquareGraph);
 

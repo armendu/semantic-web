@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export default class GetAllLikesForDinnerPlace extends Component {
-  static displayName = GetAllLikesForDinnerPlace.name;
+export default class GetTopVotedPosts extends Component {
+  static displayName = GetTopVotedPosts.name;
 
   constructor(props) {
     super(props);
@@ -13,13 +13,14 @@ export default class GetAllLikesForDinnerPlace extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    fetch('api/FoursquareData/GetAllLikesForDinnerPlace/place=' + this.state.input)
+    fetch('api/RedditData/GetTopVotedPosts/numberOfResults={numberOfResults}' + this.state.input)
       .then(response => response.json())
       .then(data => {
         this.setState({ results: data, loading: false });
       })
       .catch(error => this.setState({ results: ['The following error occurred: ' + error], loading: false }));
 
+    this.setState({ input: '' })
   }
 
   renderResultsTable = (results) => {
@@ -31,18 +32,26 @@ export default class GetAllLikesForDinnerPlace extends Component {
         <table className='table table-striped'>
           <thead>
             <tr>
-              <th>Place</th>
-              <th>Numer of likes</th>
+              <th>Post</th>
+              <th>Title</th>
+              <th>Date</th>
+              <th>Votes</th>
             </tr>
           </thead>
           <tbody>
             {results.data.map(info =>
-              <tr key={info.place.toString()}>
+              <tr key={info.post.toString()+info.title.toString()}>
                 <td>
-                  {info.place}
+                  {info.post}
                 </td>
                 <td>
-                  {info.likes}
+                  {info.title}
+                </td>
+                <td>
+                  {info.date}
+                </td>
+                <td>
+                  {info.votes}
                 </td>
               </tr>
             )}
@@ -61,14 +70,14 @@ export default class GetAllLikesForDinnerPlace extends Component {
       <div>
         <div>
           <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
-          <select value={this.state.input}
+            <input
+              type="text"
+              name="title"
+              placeholder="Search"
+              style={{ flex: '10', margin: '5px' }}
+              value={this.state.title}
               onChange={this.onChange}
-              style={{ flex: '5', margin: '5px' }}
-            >
-            <option value="Dinner">Dinner</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-          </select>
+            />
             <input
               type="submit"
               value="Submit"
