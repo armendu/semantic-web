@@ -545,6 +545,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Award5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Award5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Platinium"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment1">
@@ -603,6 +611,7 @@ Night King should have been killed by Jon maybe</hasContent>
         <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Profile"/>
         <hasAward rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Award3"/>
         <hasLanguage rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Esp"/>
+        <hasSubscriber rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
         <hasSubscriber rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Rina_Shehu"/>
         <hasVoted rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment1"/>
         <hasCoins rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hasCoins>
@@ -740,6 +749,7 @@ Change my mind!</hasDescription>
         <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Profile"/>
         <hasAward rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Award1"/>
         <hasLanguage rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Sq"/>
+        <hasSaved rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Post2"/>
         <hasSubscriber rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
         <hasCoins rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</hasCoins>
         <hasDateCreated>2019-06-11</hasDateCreated>
@@ -802,6 +812,7 @@ Change my mind!</hasDescription>
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#SubbR2">
         <rdf:type rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#SubReddit"/>
+        <hasAward rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Award5"/>
         <hasModerator rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Rina_Shehu"/>
         <hasOnlineMember rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Armend_Ukehaxhaj"/>
         <hasOnlineMember rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Hekuran_Kastrati"/>

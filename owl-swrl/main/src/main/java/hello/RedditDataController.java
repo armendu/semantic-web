@@ -26,7 +26,7 @@ public class RedditDataController {
             // Create an OWL ontology using the OWLAPI
             OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
-            File file = new File("src\\main\\ontologies\\Reddit.owl");
+            File file = new File("src/main/ontologies/Reddit.owl");
 
             ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
@@ -84,6 +84,98 @@ public class RedditDataController {
             // Process the SQWRL result
             if (result.next())
                 names.add(result.getValue("x").toString());
+
+        } catch (SWRLParseException e) {
+            System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (SQWRLException e) {
+            System.err.println("Error running SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (RuntimeException e) {
+            System.err.println("Error occurred: " + e.getMessage());
+            System.exit(-1);
+        }
+
+        return names;
+    }
+
+    @RequestMapping("/redditdata/get-profile-no-subscribers")
+    public List<String> getProfileNoSubscribers() {
+
+        List<String> names = new ArrayList<String>();
+
+        try {
+            // Create and execute a SQWRL query using the SWRLAPI
+            SQWRLResult result = queryEngine.runSQWRLQuery("q1",
+                    "Profile(?f) ^ hasName(?f, \"Hekuran\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n)  ^sqwrl:columnNames( \"Count\")");
+
+            // Process the SQWRL result
+            while (result.next())
+                names.add(result.getValue("Count").toString());
+
+        } catch (SWRLParseException e) {
+            System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (SQWRLException e) {
+            System.err.println("Error running SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (RuntimeException e) {
+            System.err.println("Error occurred: " + e.getMessage());
+            System.exit(-1);
+        }
+
+        return names;
+    }
+
+    @RequestMapping("/redditdata/get-room-messages")
+    public List<String> getRoomMessages() {
+
+        List<String> names = new ArrayList<String>();
+
+        try {
+
+            String query = "Room(?r) ^ hasModerator(?r, ?m)  ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasMessage(?r, ?s) ^ hasContent(?s, ?messages) -> sqwrl:select(?messages)";
+
+            // Create and execute a SQWRL query using the SWRLAPI
+            SQWRLResult result = queryEngine.runSQWRLQuery("q2",
+                    query);
+
+
+            // Process the SQWRL result
+            if (result.next())
+                names.add(result.getValue("messages").toString());
+
+        } catch (SWRLParseException e) {
+            System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (SQWRLException e) {
+            System.err.println("Error running SWRL rule or SQWRL query: " + e.getMessage());
+            System.exit(-1);
+        } catch (RuntimeException e) {
+            System.err.println("Error occurred: " + e.getMessage());
+            System.exit(-1);
+        }
+
+        return names;
+    }
+
+    @RequestMapping("/redditdata/get-saved-posts")
+    public List<String> getSavedPosts() {
+
+        List<String> names = new ArrayList<String>();
+
+        try {
+
+            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v) ";
+
+            // Create and execute a SQWRL query using the SWRLAPI
+            SQWRLResult result = queryEngine.runSQWRLQuery("q2",
+                    query);
+
+
+            // Process the SQWRL result
+            if (result.next())
+                names.add(result.getValue("content").toString());
 
         } catch (SWRLParseException e) {
             System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());

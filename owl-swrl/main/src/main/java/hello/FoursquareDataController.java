@@ -24,7 +24,7 @@ public class FoursquareDataController {
     public SQWRLQueryEngine queryEngine;
     public FoursquareDataController() {
         OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
-        File file = new File("src\\main\\ontologies\\Foursquare.owl");
+        File file = new File("src/main/ontologies/Foursquare.owl");
         try{
             OWLOntology ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
@@ -71,7 +71,7 @@ public class FoursquareDataController {
         try {
             // Create an OWL ontology using the OWLAPI
             OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
-            File file = new File("src\\main\\ontologies\\Foursquare.owl");
+            File file = new File("src/main/ontologies/Foursquare.owl");
 
             OWLOntology ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
