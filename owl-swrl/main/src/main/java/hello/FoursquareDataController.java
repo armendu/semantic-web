@@ -29,7 +29,7 @@ public class FoursquareDataController {
         OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
 
         try {
-            File file = new File("src\\main\\ontologies\\Foursquare.owl");
+            File file = new File("src/main/ontologies/Foursquare.owl");
 
             ontology = ontologyManager.loadOntologyFromOntologyDocument(file);
 
