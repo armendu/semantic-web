@@ -85,6 +85,8 @@ public class FoursquareDataController {
             while (result.next()){
 
                 ProfileHasCheckedInData dataToBeAdded = new ProfileHasCheckedInData();
+                dataToBeAdded.x = result.getValue("p").toString();
+                dataToBeAdded.y = result.getValue("s").toString();
 
                 System.out.println("Salary: " + result.getLiteral("s"));
 
