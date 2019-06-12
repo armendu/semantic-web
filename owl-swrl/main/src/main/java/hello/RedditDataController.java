@@ -1,5 +1,9 @@
 package hello;
 
+import hello.models.PostData;
+import hello.models.PostInfo;
+import hello.models.ProfileHasCheckedIn;
+import hello.models.ProfileHasCheckedInData;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -107,11 +111,13 @@ public class RedditDataController {
         try {
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q1",
-                    "Profile(?f) ^ hasName(?f, \"Hekuran\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n)  ^sqwrl:columnNames( \"Count\")");
+                    "Profile(?f) ^ hasName(?f, \"Hekuran\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n) ^ sqwrl:columnNames(\"Count\")");
 
             // Process the SQWRL result
-            while (result.next())
-                names.add(result.getValue("Count").toString());
+            while (result.next()) {
+
+                names.add(result.getValue("content").toString());
+            }
 
         } catch (SWRLParseException e) {
             System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
@@ -160,13 +166,13 @@ public class RedditDataController {
     }
 
     @RequestMapping("/redditdata/get-saved-posts")
-    public List<String> getSavedPosts() {
+    public PostInfo getSavedPosts() {
 
-        List<String> names = new ArrayList<String>();
+        PostInfo postInfo = new PostInfo();
 
         try {
 
-            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v) ";
+            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) ^ sqwrl:groupBy(?p, ?v) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
 
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q2",
@@ -174,8 +180,15 @@ public class RedditDataController {
 
 
             // Process the SQWRL result
-            if (result.next())
-                names.add(result.getValue("content").toString());
+            while (result.next()){
+
+                PostData dataToBeAdded = new PostData();
+                dataToBeAdded.content = result.getValue("content").toString();
+                dataToBeAdded.title = result.getValue("t").toString();
+                dataToBeAdded.votes = result.getValue("v").toString();
+
+                postInfo.data.add(dataToBeAdded);
+            }
 
         } catch (SWRLParseException e) {
             System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
@@ -188,8 +201,6 @@ public class RedditDataController {
             System.exit(-1);
         }
 
-        return names;
+        return postInfo;
     }
-
-
 }
