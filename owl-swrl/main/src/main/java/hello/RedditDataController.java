@@ -8,6 +8,7 @@ import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.swrlapi.factory.SWRLAPIFactory;
@@ -41,15 +42,15 @@ public class RedditDataController {
         }
     }
 
-    @RequestMapping("/redditdata/get-subscribers")
-    public List<String> getSubscribers() {
+    @RequestMapping("/redditdata/find/{subreddit}")
+    public List<String> getSubscribers(@PathVariable String subreddit) {
 
         List<String> names = new ArrayList<String>();
 
         try {
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q1",
-                    "SubReddit(?f) ^ hasName(?f, \"Kosova\" ^^ rdf:PlainLiteral) -> sqwrl:select(?f)");
+                    "SubReddit(?f) ^ hasName(?f, \""+subreddit+"\" ^^ rdf:PlainLiteral) -> sqwrl:select(?f)");
 
             // Process the SQWRL result
             while (result.next())
@@ -86,8 +87,8 @@ public class RedditDataController {
 
 
             // Process the SQWRL result
-            if (result.next())
-                names.add(result.getValue("x").toString());
+            while (result.next())
+                names.add(result.getValue("mutual").toString());
 
         } catch (SWRLParseException e) {
             System.err.println("Error parsing SWRL rule or SQWRL query: " + e.getMessage());
@@ -103,20 +104,20 @@ public class RedditDataController {
         return names;
     }
 
-    @RequestMapping("/redditdata/get-profile-no-subscribers")
-    public List<String> getProfileNoSubscribers() {
+    @RequestMapping("/redditdata/get-profile-no-subscribers/{profileName}")
+    public List<String> getProfileNoSubscribers(@PathVariable String profileName) {
 
         List<String> names = new ArrayList<String>();
 
         try {
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q1",
-                    "Profile(?f) ^ hasName(?f, \"Hekuran\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n) ^ sqwrl:columnNames(\"Count\")");
+                    "Profile(?f) ^ hasName(?f, \""+profileName+"\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n) ^ sqwrl:columnNames(\"Count\")");
 
             // Process the SQWRL result
             while (result.next()) {
 
-                names.add(result.getValue("content").toString());
+                names.add(result.getValue("Count").toString());
             }
 
         } catch (SWRLParseException e) {
@@ -148,7 +149,7 @@ public class RedditDataController {
 
 
             // Process the SQWRL result
-            if (result.next())
+            while (result.next())
                 names.add(result.getValue("messages").toString());
 
         } catch (SWRLParseException e) {
@@ -171,13 +172,12 @@ public class RedditDataController {
         PostInfo postInfo = new PostInfo();
 
         try {
-
-            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) ^ sqwrl:groupBy(?p, ?v) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
+            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) ˚ " +
+                    " sqwrl:makeBag(?a, ?s) ^ sqwrl:groupBy(?a, ?s) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
 
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q2",
                     query);
-
 
             // Process the SQWRL result
             while (result.next()){
