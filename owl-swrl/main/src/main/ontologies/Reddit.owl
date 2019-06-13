@@ -734,9 +734,9 @@ Dardanians</hasContent>
         <hasComment rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment2"/>
         <hasComment rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment3"/>
         <isSavedBy rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Hekuran_Kastrati"/>
+        <hasContent>I think that Episode 3 was the best one ever
+Change my mind!</hasContent>
         <hasDateCreated>2019-06-12</hasDateCreated>
-        <hasDescription>I think that Episode 3 was the best one ever
-Change my mind!</hasDescription>
         <hasTitle>Episode 3</hasTitle>
         <hasVotes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasVotes>
     </owl:NamedIndividual>

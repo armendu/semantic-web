@@ -171,9 +171,11 @@ public class RedditDataController {
 
         PostInfo postInfo = new PostInfo();
 
+        postInfo.data = new ArrayList<>();
+
         try {
-            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) ˚ " +
-                    " sqwrl:makeBag(?a, ?s) ^ sqwrl:groupBy(?a, ?s) -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
+            String query = "SubReddit(?s) ^ hasModerator(?r, ?m) ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasSaved(?m, ?p) ^ hasTitle(?p, ?t) ^ hasContent(?p, ?content) ^ hasVotes(?p, ?v) " +
+                    " -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
 
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("q2",
@@ -187,7 +189,8 @@ public class RedditDataController {
                 dataToBeAdded.title = result.getValue("t").toString();
                 dataToBeAdded.votes = result.getValue("v").toString();
 
-                postInfo.data.add(dataToBeAdded);
+                if(!inArray(postInfo.data,dataToBeAdded.title))
+                    postInfo.data.add(dataToBeAdded);
             }
 
         } catch (SWRLParseException e) {
@@ -202,5 +205,15 @@ public class RedditDataController {
         }
 
         return postInfo;
+    }
+
+    private boolean inArray(List<PostData> data, String title ){
+
+        for(int i=0;i<data.size(); i++){
+            if(data.get(i).title.equals(title))
+                return true;
+        }
+
+        return false;
     }
 }
