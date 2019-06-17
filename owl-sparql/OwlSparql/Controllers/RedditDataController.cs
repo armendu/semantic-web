@@ -20,8 +20,8 @@ namespace OwlSparql.Controllers
         {
             _redditGraph = new Graph();
 
-            DataUriLoader.Load(_redditGraph, new Uri("https://www.tratics.com/semanticweb/Reddit.owl"));
-//            FileLoader.Load(_redditGraph, @"Ontologies/Reddit.owl");
+//            DataUriLoader.Load(_redditGraph, new Uri("https://www.tratics.com/semanticweb/Reddit.owl"));
+            FileLoader.Load(_redditGraph, @"Ontologies/Reddit.owl");
 
             //First we need an instance of the SparqlQueryParser
             _parser = new SparqlQueryParser();

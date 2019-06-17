@@ -27,7 +27,7 @@ export default class GetTopVotedPosts extends Component {
     console.log(results);
     return (
       <div>
-        <h3>Get all the places that have a social media account</h3>
+        <h3>Get Top Voted Posts</h3>
 
         <table className='table table-striped'>
           <thead>

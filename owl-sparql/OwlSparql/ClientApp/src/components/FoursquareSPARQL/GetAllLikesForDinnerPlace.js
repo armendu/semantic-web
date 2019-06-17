@@ -5,7 +5,7 @@ export default class GetAllLikesForDinnerPlace extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { results: [], loading: true, input: '' };
+    this.state = { results: [], loading: true, input: 'Dinner' };
   }
 
   onChange = (e) => this.setState({ input: e.target.value });
@@ -26,7 +26,7 @@ export default class GetAllLikesForDinnerPlace extends Component {
     console.log(results);
     return (
       <div>
-        <h3>Get all the places that have a social media account</h3>
+        <h3>Get all likes for a type of place.</h3>
 
         <table className='table table-striped'>
           <thead>
@@ -60,15 +60,15 @@ export default class GetAllLikesForDinnerPlace extends Component {
     return (
       <div>
         <div>
-          <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
-          <select value={this.state.input}
+        <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Search"
+              style={{ flex: '10', margin: '5px' }}
+              value={this.state.input}
               onChange={this.onChange}
-              style={{ flex: '5', margin: '5px' }}
-            >
-            <option value="Dinner">Dinner</option>
-            <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-          </select>
+            />
             <input
               type="submit"
               value="Submit"

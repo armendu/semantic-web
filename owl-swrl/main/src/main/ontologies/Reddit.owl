@@ -115,7 +115,6 @@
     <!-- http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#hasSaved -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#hasSaved">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#isSavedBy"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Profile"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Comment"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/hekurankastrati/ontologies/2019/4/reddit#Post"/>

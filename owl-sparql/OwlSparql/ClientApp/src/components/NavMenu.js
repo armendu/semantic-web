@@ -65,7 +65,7 @@ export class NavMenu extends Component {
                 </NavItem>
                 <NavItem>
                   <Dropdown isOpen={this.state.swrlDropdownOpen} toggle={this.toggleSwrl}>
-                    <DropdownToggle caret>SPARQL</DropdownToggle>
+                    <DropdownToggle caret>SWRL</DropdownToggle>
                     <DropdownMenu>
                       <DropdownItem header>Foursquare queries</DropdownItem>
                       <DropdownItem><NavLink tag={Link} className="text-dark" to="/first-swrl">First SWRL</NavLink></DropdownItem>

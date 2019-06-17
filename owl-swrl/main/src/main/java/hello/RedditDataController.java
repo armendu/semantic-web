@@ -111,7 +111,7 @@ public class RedditDataController {
 
         try {
             // Create and execute a SQWRL query using the SWRLAPI
-            SQWRLResult result = queryEngine.runSQWRLQuery("q1",
+            SQWRLResult result = queryEngine.runSQWRLQuery("q3",
                     "Profile(?f) ^ hasName(?f, \""+profileName+"\"^^rdf:PlainLiteral) ^ hasSubscriber(?f, ?n) ->  sqwrl:count(?n) ^ sqwrl:columnNames(\"Count\")");
 
             // Process the SQWRL result
@@ -144,7 +144,7 @@ public class RedditDataController {
             String query = "Room(?r) ^ hasModerator(?r, ?m)  ^ hasName(?m, \"Rina\"^^rdf:PlainLiteral) ^ hasMessage(?r, ?s) ^ hasContent(?s, ?messages) -> sqwrl:select(?messages)";
 
             // Create and execute a SQWRL query using the SWRLAPI
-            SQWRLResult result = queryEngine.runSQWRLQuery("q2",
+            SQWRLResult result = queryEngine.runSQWRLQuery("q4",
                     query);
 
 
@@ -178,7 +178,7 @@ public class RedditDataController {
                     " -> sqwrl:select(?t) ^ sqwrl:select(?content) ^ sqwrl:select(?v)";
 
             // Create and execute a SQWRL query using the SWRLAPI
-            SQWRLResult result = queryEngine.runSQWRLQuery("q2",
+            SQWRLResult result = queryEngine.runSQWRLQuery("q5",
                     query);
 
             // Process the SQWRL result

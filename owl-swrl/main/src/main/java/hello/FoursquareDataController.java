@@ -41,6 +41,8 @@ public class FoursquareDataController {
         List<String> names = new ArrayList<String>();
 
         try {
+
+            // kthen te gjitha vendet qe jane vleresuar se gjinden  ne lokacionin qe e kane ne info
             // Create and execute a SQWRL query using the SWRLAPI
             SQWRLResult result = queryEngine.runSQWRLQuery("Q1", "Place(?x) ^ isRatedBy(?x, ?y) ^ isRightInMap(?y, true) -> sqwrl:select(?x)");
 
@@ -67,6 +69,7 @@ public class FoursquareDataController {
     public ProfileHasCheckedIn secondSwrl() {
 
         ProfileHasCheckedIn profileHasCheckedIn = new ProfileHasCheckedIn();
+        profileHasCheckedIn.data = new ArrayList<>();
 
         try {
             // Create an OWL ontology using the OWLAPI
@@ -87,8 +90,6 @@ public class FoursquareDataController {
                 ProfileHasCheckedInData dataToBeAdded = new ProfileHasCheckedInData();
                 dataToBeAdded.x = result.getValue("p").toString();
                 dataToBeAdded.y = result.getValue("s").toString();
-
-                System.out.println("Salary: " + result.getLiteral("s"));
 
                 profileHasCheckedIn.data.add(dataToBeAdded);
             }
